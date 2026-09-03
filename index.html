@@ -1,334 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pharaoh Conglomerate Org | Imperial Kham-Dom V3 Final</title>
-<meta name="description" content="Official Site of The Messianic Imperial Kham-Dom. EIN 88-0836464 TAX-EXEMPT. HRAR 88-0710776. Orange Money LR 0776961800. Genesis 1:28 Dominion Economics. Built in Termux.">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H.A.L.EL V27.5 - 亚洲之门 ASIA GATE</title>
 <style>
-:root{--gold:#D4AF37;--black:#0A0A0A;--line:rgba(212,175,55,.22);--obsidian:#0A0C12;--signal:#4FC3F7;--papyrus:#ECE3D0;--dim:#B9AF98;--card:#141414}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:#fff;font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6;overflow-x:hidden}
-.mono{font-family:'IBM Plex Mono',monospace}.gold{color:var(--gold)}.cinzel{font-family:'Cinzel',serif}
-.topbar{background:var(--gold);color:#000;text-align:center;padding:7px 10px;font-size:9px;font-weight:900;letter-spacing:.14em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{max-width:1320px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
-.brand{font-family:'Cinzel',serif;font-weight:900;letter-spacing:.22em;font-size:15px}
-.brand span{color:var(--gold)}
-.links{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.links button{background:transparent;border:1px solid var(--line);color:var(--dim);font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:8px 11px;cursor:pointer;transition:.2s}
-.links button:hover,.links button.active{border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,.08)}
-#toggle{display:none;font-size:20px;background:transparent;border:1px solid var(--line);color:var(--gold);padding:4px 12px;cursor:pointer}
-@media(max-width:980px){.links{display:none;flex-direction:column;position:absolute;top:52px;left:0;right:0;background:#0A0A0A;padding:14px;border-bottom:1px solid var(--line)}.links.open{display:flex}#toggle{display:block}}
-section{padding:72px 20px;border-top:1px solid var(--line);max-width:1320px;margin:auto}
-.hero{text-align:center;padding:86px 20px 78px;border-top:none;max-width:1320px;margin:auto}
-h1{font-family:'Cinzel',serif;font-size:clamp(30px,5.6vw,62px);line-height:.92;font-weight:900;letter-spacing:-.02em}
-h1 .gold{display:block}
-.btn{display:inline-block;padding:13px 24px;border:1px solid var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;text-decoration:none;cursor:pointer;transition:.2s}
-.btn-gold{background:var(--gold);color:#000}.btn-gold:hover{filter:brightness(1.1)}
-.btn-outline{color:#fff;background:transparent}.btn-outline:hover{background:rgba(212,175,55,.1)}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.card{background:var(--card);padding:22px}
-.card h3{font-size:11px;letter-spacing:.22em;color:var(--gold);margin-bottom:12px;text-transform:uppercase;font-family:'IBM Plex Mono',monospace}
-.market{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.market .card{text-align:center;padding:26px 18px}
-.donate-box{background:#111;padding:32px;border:1px solid var(--gold);display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
-details{border:1px solid var(--line);background:#111;margin-bottom:10px}
-summary{padding:16px 18px;cursor:pointer;list-style:none;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;display:flex;justify-content:space-between;align-items:center}
-summary::-webkit-details-marker{display:none}
-summary:after{content:'+';font-size:14px}
-details[open] summary{border-bottom:1px solid var(--line)}
-details[open] summary:after{content:'−'}
-.inner{padding:20px;font-size:13px;color:#bbb;line-height:1.85}
-.inner b{color:#ddd}
-.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--gold);color:#000;padding:11px 22px;font-size:11px;font-weight:900;letter-spacing:.16em;z-index:9999;opacity:0;transition:.35s;pointer-events:none}
-.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
-.monitor{border:1px solid var(--line);background:#12151F;overflow:hidden}
-.m-bar{display:flex;justify-content:space-between;padding:10px 14px;background:#0D1119;font-size:10px;color:var(--signal);letter-spacing:.12em;text-transform:uppercase}
-.m-screen{aspect-ratio:16/8.2;background:radial-gradient(80% 60% at 20% 20%,rgba(79,195,247,.15),transparent),radial-gradient(80% 60% at 80% 80%,rgba(212,175,55,.12),transparent),#090B10;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
-.pip{position:absolute;right:12px;bottom:12px;width:26%;max-width:130px;aspect-ratio:1.3;border:2px solid var(--gold);background:#000;z-index:3;display:none;background-size:cover;background-position:center}
-.pip.on{display:block}
-.feed{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s}
-table{width:100%;border-collapse:collapse;margin-top:14px}td,th{border:1px solid var(--line);padding:9px 10px;font-size:12px;text-align:left}
-th{color:var(--gold);font-size:10px;letter-spacing:.15em;text-transform:uppercase}
-.footer{padding:48px 20px;border-top:1px solid var(--line);max-width:1320px;margin:auto;font-size:11px;color:#777;line-height:1.9;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-@keyframes marquee{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
-.ticker-wrap{overflow:hidden;white-space:nowrap;background:#0D1119;border-top:1px solid var(--line);padding:8px 0}
-.ticker{display:inline-block;animation:marquee 28s linear infinite;font-size:10px;letter-spacing:.18em;color:var(--dim)}
-@media(max-width:900px){.grid4,.market{grid-template-columns:1fr}.donate-box{grid-template-columns:1fr}.footer{grid-template-columns:1fr}.hero{padding:56px 16px}}
-</style>
-</head>
-<body>
+body{background:#080808;color:#D4AF37;font-family:Arial, sans-serif;margin:0;padding:20px;text-align:center}
+h1{font-size:30px;text-shadow:0 0 15px #D4AF37}
+h2{color:#FFD700;border-bottom:2px solid #D4AF37;padding-bottom:8px}
+.card{background:#111;border:2px solid #D4AF37;border-radius:14px;padding:18px;margin:18px auto;max-width:1200px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.vid{border:1px solid #D4AF37;border-radius:10px;padding:8px;background:#0a0a0a}
+.gate{border-left:3px solid #D4AF37;padding-left:12px;margin:10px 0;text-align:left}
+.badge{background:#1a1a1a;border:1px solid #D4AF37;border-radius:10px;padding:12px}
+.cn{color:#FF3B30;font-size:13px}
+</style></head><body>
+<h1>HALEL V27.5 • 亚洲之门 ASIA GATE • 人道天使</h1>
+<p>HUMANITARIAN ANGELS & LADIES | 信使 Hermes • 图特档案 Toth | 人道使命</p>
 
-<div class="topbar">EIN 88-0836464 TAX-EXEMPT • HRAR 88-0710776 SOVEREIGN PROXY • ORANGE MONEY LR 0776961800 • (771)223-8021 • m.sirleaf@pharaoh-conglomerate.org • CASHAPP $LetGodHelp • BUILT IN TERMUX • LAOBAN 公益</div>
-
-<header>
-<div class="nav">
-<div class="brand"><span>☥</span> PHARAOH CONGLOMERATE</div>
-<button id="toggle" aria-label="Menu">☰</button>
-<div class="links" id="links">
-<button onclick="go('home')" class="active" data-target="home">Home</button>
-<button onclick="go('programs')" data-target="programs">Programs</button>
-<button onclick="go('market')" data-target="market">Market</button>
-<button onclick="go('donate')" data-target="donate">Donate</button>
-<button onclick="go('bgim')" data-target="bgim">BGIM</button>
-<button onclick="go('pdi')" data-target="pdi">PDI</button>
-<button onclick="go('halel')" data-target="halel">H.A.L.E.L</button>
-<button onclick="go('toth')" data-target="toth">Toth</button>
-<button onclick="go('volunteer')" data-target="volunteer">Volunteer</button>
-<button onclick="go('contact')" data-target="contact">Contact</button>
-</div>
-</div>
-</header>
-
-<div id="home" class="hero">
-<p class="mono gold" style="font-size:10px;letter-spacing:.32em;margin-bottom:14px">COMMONWEALTH OF ISRAEL CHURCH • MONROVIA + SACRAMENTO</p>
-<h1><span>THE MESSIANIC</span><span class="gold">IMPERIAL</span><span>KHAM-DOM</span></h1>
-<p class="mono" style="color:#888;max-width:660px;margin:22px auto 0;font-size:13px;line-height:1.7">Genesis 1:28 — Be Fruitful and Multiply, Have Dominion. Market is Weapon. Token is Blood. AI is Workforce. For the Kingdom, By the Kingdom. Built in Termux. Ruled by 21stCenturyPharaoh.</p>
-<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px">
-<button class="btn btn-gold" onclick="go('market')">ENTER MARKETPLACE</button>
-<button class="btn btn-outline" onclick="go('donate')">DONATE ORANGE MONEY</button>
-<button class="btn btn-outline" onclick="go('toth')">WATCH TOTH BROADCAST</button>
-</div>
-<div style="margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);max-width:900px;margin-inline:auto;text-align:left">
-<div class="card"><h3>GENESIS 1:28</h3><p style="font-size:12px;color:#999">Dominion Economics. Replenish, subdue, have dominion.</p></div>
-<div class="card"><h3>MARKET IS WEAPON</h3><p style="font-size:12px;color:#999">Pro Bono Exchange replaces begging with labor.</p></div>
-<div class="card"><h3>TOKEN IS BLOOD</h3><p style="font-size:12px;color:#999">ECO Token is circulation, not speculation.</p></div>
-<div class="card"><h3>AI IS WORKFORCE</h3><p style="font-size:12px;color:#999">Rule 241 Firewall: 2 Entities, 1 Brain, IRS intact.</p></div>
-</div>
-</div>
-
-<section id="programs">
-<p class="mono gold" style="font-size:10px;letter-spacing:.28em">I. PROGRAMS — LAW48 FIREWALL</p>
-<h2 class="cinzel gold" style="margin:14px 0;font-size:22px">Pharaoh Angels Inc | CA 501c3 | EIN 88-0836464 | LAW48 公益 CHARITABLE</h2>
-<div class="grid4">
-<div class="card"><h3>Mission 使命</h3><p style="font-size:13px;color:#bbb">California Public Charity advancing human rights through technology, education, and direct aid. All donations tax-deductible per IRS Section 170. CA Attorney General Registry Compliant.</p><div style="margin-top:14px;aspect-ratio:16/9;background:#000;border:1px solid var(--line)"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/dhLboOnPljo" title="Intro" frameborder="0" allowfullscreen></iframe></div></div>
-<div class="card"><h3>Contact 联系</h3><p style="font-size:12px;color:#bbb;line-height:1.9">160 Bankside Way<br>Sacramento, CA 95835<br><br>pharangels@gmail.com<br>pharaoh.conglomerate.office@gmail.com<br>pharaohangels@tutanota.com<br>m.sirleaf@pharaoh-conglomerate.org<br><br>+1 (757)805-7262<br>+1 (302)753-7770<br>(771)223-8021<br><br>CashApp: $LetGodHelp<br>Orange Money: 0776961800</p></div>
-<div class="card" style="grid-column:span 2"><h3>⚠️ LAW 48 防火墙 FIREWALL ACTIVE</h3><p style="font-size:12px;color:#bbb;line-height:1.9"><b>Entity Status:</b> 501(c)(3) EIN 88-0836464<br><b>C-Corp Status:</b> 无 NONE. This is 非营利组织 NOT for-profit.<br><b>Retains:</b> Human Rights Angels Registry Inc EIN 88-0710776 [C-Corp] as Sovereign Proxy<br><b>Relationship:</b> 零混合 Zero commingling. Separate books. Separate boards.<br><br>法律 25: 2个法律实体 + 1个大脑 = 帝国在线。IRS防火墙完好。<br>Law 25: 2 legal entities + 1 brain = Empire online. IRS firewall intact.<br><br>Rule 241: No private benefit. Market transactions at FMV. Token is redemption receipt, not equity.</p></div>
-</div>
-</section>
-
-<section id="market">
-<p class="mono gold" style="font-size:10px;letter-spacing:.28em">II. MARKETPLACE — PRO BONO SERVICE EXCHANGE — ALL OPEN</p>
-<h2 class="cinzel" style="margin:14px 0 18px">Genesis Labor Market</h2>
-<div class="market">
-<div class="card"><b class="gold">GABE'S LANDSCAPING</b><br><span class="mono" style="font-size:10px;color:#666">SAC • $25/hr • OPEN</span></div>
-<div class="card"><b class="gold">HRAR INC 88-0710776</b><br><span class="mono" style="font-size:10px;color:#666">SOVEREIGN PROXY • OPEN</span></div>
-<div class="card"><b class="gold">LETGODHELP FOUNDATION</b><br><span class="mono" style="font-size:10px;color:#666">501c3 • OPEN</span></div>
-<div class="card"><b class="gold">EMERGENCY FOOD & SHELTER</b><br><span class="mono" style="font-size:10px;color:#666">MONROVIA/SAC • OPEN</span></div>
-<div class="card"><b class="gold">H-2A / H-2B VISA PIPELINE</b><br><span class="mono" style="font-size:10px;color:#666">LIBERIA->USA • OPEN</span></div>
-<div class="card"><b class="gold">VA TO FREEPORT UNDERGROUND 2026</b><br><span class="mono" style="font-size:10px;color:#666">RELOCATION • OPEN</span></div>
-<div class="card"><b class="gold">BGIM 30L 1.2kWh OFF-GRID</b><br><span class="mono" style="font-size:10px;color:#666">SOLAR GENESIS • OPEN</span></div>
-<div class="card"><b class="gold">ECO TOKEN SWAP</b><br><span class="mono" style="font-size:10px;color:#666">REDEMPTION • OPEN</span></div>
-</div>
-</section>
-
-<section id="donate">
-<p class="mono gold" style="font-size:10px;letter-spacing:.28em">III. TREASURY — DIRECT FIELD VEIN</p>
-<div class="donate-box">
+<div class="card"><h2>HALEL MISSIONS - 非洲 + 亚洲之门 AFRICA + ASIA GATES <span class="cn">慈悲 • 守护 • 希望</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
 <div>
-<h2 class="cinzel" style="font-size:28px">Orange Money Liberia</h2><p style="font-size:48px;color:var(--gold);font-weight:900;letter-spacing:-.02em">0776961800</p><p class="mono" style="font-size:11px;color:#aaa;margin-top:4px">MOMOLU SIRLEAF JR • DIRECT FIELD VEIN — NO MIDDLEMAN</p>
-<div style="margin-top:18px;display:flex;gap:8px;flex-wrap:wrap">
-<button class="btn btn-gold" onclick="copyTxt('0776961800')">COPY ORANGE MONEY</button>
-<button class="btn btn-outline" onclick="copyTxt('$LetGodHelp')">COPY CASHAPP</button>
-<button class="btn btn-outline" onclick="copyTxt('m.sirleaf@pharaoh-conglomerate.org')">COPY EMAIL</button>
-<button class="btn btn-outline" onclick="copyTxt('(771)223-8021')">COPY PHONE</button>
+<div class="gate"><b>GATE I • DAKAR 达喀尔</b><br>WEST ATLANTIC 西大西洋 • SUPPLY 物资</div>
+<div class="gate"><b>GATE II • CAIRO 开罗</b><br>NILE 尼罗河 • RELIEF 救援</div>
+<div class="gate"><b>GATE III • ADDIS ABABA 亚的斯亚贝巴</b><br>HORN ROUTE • MEDICAL 医疗</div>
+<div class="gate"><b>GATE IV • NAIROBI 内罗毕</b><br>EAST HIGHLAND • LOGISTICS 后勤</div>
+<div class="gate"><b>GATE V • CAPE TOWN 开普敦</b><br>SOUTH COAST 南海岸 • SECURE 安全</div>
+<div class="gate"><b>GATE VI • ASIA 亚洲之门 东京 • 首尔 • 新加坡</b><br><span class="cn">人道桥梁 - 人道天使亚洲分部 • Humanitarian Bridge Asia</span></div>
 </div>
-<div style="margin-top:22px;border:1px dashed var(--gold);padding:18px;text-align:center;background:#0E0E0E"><p class="mono" style="font-size:10px;color:var(--gold);letter-spacing:.18em">SCAN TO PAY — ORANGE MONEY LIBERIA • LIVE QR</p><div style="margin:12px auto;width:160px;height:160px;background:#0A0A0A;border:1px solid var(--gold);padding:8px;display:flex;align-items:center;justify-content:center"><img src="data:image/png;base64,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" alt="Orange Money QR 0776961800" style="width:100%;height:100%;object-fit:contain;image-rendering:pixelated"></div><p class="mono" style="font-size:11px;line-height:1.6">Number: <b style="color:var(--gold)">0776961800</b><br>Momolu Sirleaf Jr.<br>CashApp: $LetGodHelp<br><span style="font-size:9px;color:#666">Long-press to save QR • Tap COPY buttons above</span></p></div>
+<div>
+<h3>ORDERS 十二令 <span class="cn">慈悲令</span></h3>
+<div class="grid">
+<div class="badge"><b>MERCY 慈悲令</b><br>仁慈 • CIVILIAN AID 平民援助</div>
+<div class="badge"><b>GUARDIAN 守护令</b><br>守护 • SECURITY 安全</div>
+<div class="badge"><b>LIGHT 光明令</b><br>光明 • MEDICAL 医疗</div>
+<div class="badge"><b>HOPE 希望令</b><br>希望 • RESCUE 救援</div>
 </div>
-<div class="mono" style="font-size:12px;line-height:2.1;color:#bbb">
-<b style="color:var(--gold)">TAX-EXEMPT</b><br>All donations tax-deductible per IRS Section 170. 501(c)(3) Tax-Exempt.<br><br>
-<b>PHARAOH ANGELS INC 501(c)(3)</b><br>EIN 88-0836464<br>160 Bankside Way Sacramento CA 95831<br>CA AG Registry Compliant<br><br>
-<b>HRAR INC</b><br>EIN 88-0710776 Sovereign Proxy<br>Zero commingling — 2 Entities 1 Brain<br>LAW48 Rule 241 Compliant<br><br>
-<b>FIELD VEIN</b><br>Monrovia Liberia • Orange Money Direct<br>No Western Union fees. No middleman.<br>Receipt via ECO Token.
-</div>
-</div>
-</section>
-
-<section id="bgim">
-<p class="mono gold" style="font-size:10px;letter-spacing:.28em">IV. BGIM — BLUE-GREEN INFRASTRUCTURE MODULE — PDI v1</p>
-<h2 class="cinzel gold" style="font-size:24px;margin:12px 0">Blue-Green Infrastructure Module Prototype v1</h2>
-<p class="mono" style="font-size:11px;color:#888;margin-bottom:18px">Renewable energy, clean water, irrigation, sanitation, reforestation, ecosystem restoration. Deployable: Luxury RV, Houseboats, Floating platforms, Coastal.</p>
-
-<details open><summary>I. Core Components — Slow-Flow Helical Turbine</summary><div class="inner"><b>Materials:</b> Bamboo laminated blades, Palm resin waterproof, Rebar shaft, Salvaged bearings, Truck alternator, Marine rope, Stone ballast laterite/basalt<br><b>Specs:</b> Flow 0.5–1.5 m/s, Output 300–800W per turbine, Operation 24/7 continuous<br><b>Installation:</b> Mounted below houseboat hull or floating frame, Connected via shaft + gearbox</div></details>
-<details><summary>II. Power Storage + Diamond Solar Evaporator</summary><div class="inner"><b>Storage:</b> Deep-cycle 12V/24V, Charge controller, DC panel — Stores turbine energy, powers pumps UV.<br><br><b>Diamond-Grade Solar Thermal Evaporator:</b> Passive solar distillation<br>Materials: Clay plates, Charcoal absorber, Glass dome cut bottles, Copper tubing condenser, Bamboo frame, Palm fiber insulation, Optional synthetic diamond optical window<br>Output: 2–4L/day per 0.5m² module solar only, Scalable</div></details>
-<details><summary>III. Water Condensation Storage Distribution</summary><div class="inner"><b>Condensation:</b> Copper/aluminum coils, Collection channels, Storage drums — 10–30L/day base, 30–80L/day scaled<br><b>Distribution:</b> Gravity-fed drip perforated tubing clay pot olla, UV LED sterilization, Greywater reused</div></details>
-<details><summary>IV. Structural Mounting + Output Capacity</summary><div class="inner"><b>RV:</b> Roof bamboo/aluminum rack, Hinged solar angle, Shock pads, Quick-connect plumbing<br><b>Houseboat:</b> Deck bamboo/steel frame, Floating extension sealed drums, Turbine below hull<br><br><table><tr><th>Category</th><th>Output</th></tr><tr><td>Electricity</td><td>0.5–1.5 kWh/day</td></tr><tr><td>Water base</td><td>10–30 L/day</td></tr><tr><td>Water scaled</td><td>30–80 L/day</td></tr><tr><td>Coverage</td><td>1–3 households</td></tr><tr><td>Agriculture</td><td>Small farm plot</td></tr><tr><td>Reforestation</td><td>50–100 seedlings</td></tr></table></div></details>
-<details><summary>V. Eco-Stewardship + Materials Summary</summary><div class="inner"><b>Agriculture:</b> Drip irrigation, Soil moisture, Crop yield<br><b>Sanitation:</b> Clean distilled, UV, Hygienic washing<br><b>Reforestation:</b> Seedling nurseries, Olla irrigation, Cluster planting<br><b>Biodiversity:</b> Habitat rehydration, Micro-ecosystem, Pollinator attraction<br><br><b>Field-Sourced:</b> Bamboo, Rebar, Marine rope, Clay tiles, Palm fiber, Alternator salvaged, Bearings, Shafts, Clay plates, Charcoal, Glass domes, Copper tubing, PVC/bamboo piping, Storage tanks, Drip lines</div></details>
-<details><summary>VI. Operational Infrastructure — VA-Freeport Pipeline + AquaNuke</summary><div class="inner"><b>VA-Freeport Eco-Stewardship Pipeline:</b> Gabe's Landscaping logistics conduit Dulles VA to Freeport Monrovia<br>Asset Inflow: Donated Low Carbon equipment Trucks Vans Mowers via Taproot/Catchafire US<br>Shipping Hub: Van to Freeport via Asset John Hillary Wilson III customs maritime<br>Deployment: Freeport to Visionary Intelligence Portal CV Certification centers<br><br><b>AquaNuke™ Diamond-Matrix Manufacturing:</b> CVD diamond-printing industrial blades reducing capex 90%<br><b>AI-Morse Biospheric Monitoring:</b> Bio-Ally Sensor Mesh diamond-printed sensors across agri coops to Pharaoh Intelligence Core</div></details>
-<details><summary>VII. Grant Adaptation Pack — USAID World Bank ESG WHO</summary><div class="inner"><b>USAID — CEES-VCS:</b> Community-Embedded Environmental Security & Vector Control System<br><b>World Bank — RUE-EIS:</b> Resilient Urban Ecology & Environmental Intelligence System<br><b>ESG Investors:</b> Environmental plastic reduction, Social PLP workforce, Governance dashboards<br><b>WHO/Gates — IVM-EHP:</b> Integrated Vector Management & Environmental Health Platform</div></details>
-</section>
-
-<section id="pdi">
-<p class="mono gold">PDI — PHARAOH DIAMOND INITIATIVE</p>
-<h2 class="cinzel" style="margin-top:8px">Diamond-Matrix Manufacturing — Never-Dull Edge Tech — 90% Capex Reduction</h2>
-<p style="color:#aaa;font-size:13px;margin-top:10px;max-width:780px">On-site CVD diamond-printing industrial blades, retrofitted machinery for Gbarpolu mining resilience. AquaNuke™ field forge. Repair & Resilience in Liberian infra.</p>
-</section>
-
-<section id="halel">
-<p class="mono gold">V. H.A.L.E.L NODE — Autonomous Synthetic + Human Assets</p>
-<h2 class="cinzel gold" style="font-size:22px;margin:10px 0">Humanitarian Angels & Ladies Le Yeshua Ha Elyon — Volunteer Supermodels' Sorority</h2>
-<details open><summary>Orders — 13 Houses</summary><div class="inner">Havah (Eve), Sarah, Rebecca, Leah, Bilhah, Zilpah, Miriam (wife of Moses), Miriam (mother of Yeshua), Candace (Kandake), Ruth, Esther, Elizabeth, Hagar — Banner Motto Colors Emblem Traditions Annual Gathering — Current High Priestess Mosetta Moore — Founder Pharaoh M Sirleaf Laoban in Name of Yeshua Ha Elyon — Motto: To Serve is to Build. To Build is to Steward. To Steward is to Lift Creation.</div></details>
-<details><summary>Consulates + Node Teams</summary><div class="inner"><b>Consulates:</b> Consul, Deputy Consul, Quartermaster, Archivist, Event Coordinator, Training Coordinator, Hospitality Coordinator<br><b>Node Teams:</b> Aleph, Bet, Gimel, Dalet, He, Vav, Zayin — flag badge colors mascot seasonal objectives</div></details>
-<details><summary>Sorority Stones + Gates + Corps + Elements</summary><div class="inner"><b>Stones:</b> Sapphire Emerald Topaz Amethyst Jasper Ruby etc<br><b>Five Gates:</b> North, South, East, West, Central Gate (Africa)<br><b>Three Corps:</b> Humanitarian Angels Corps, Ladies Corps, Divas Corps<br><b>Four Elements:</b> 🌬 Air, 🌊 Water, 🌍 Earth, 🔥 Fire</div></details>
-<details><summary>Lore — Five Pillars + Path</summary><div class="inner"><b>Five Pillars:</b> I Wisdom, II Stewardship, III Service, IV Sisterhood, V Renewal<br><b>Path:</b> Seeker > Steward > Builder > Guardian > Envoy > Consul > High Steward > High Priestess<br><br>We do not gather to seek glory. We gather to restore what has been broken. To plant where others uprooted. To teach where others forgot. To protect what cannot speak.</div></details>
-</section>
-
-<section id="toth">
-<p class="mono gold" style="font-size:10px;letter-spacing:.28em">VI. TOTH BROADCAST — hermes-toth-agent.pages.dev</p>
-<div class="monitor">
-<div class="m-bar"><span>Toth // Broadcast Monitor — HERMES-TOTH LIVE</span><span style="display:flex;gap:6px;align-items:center;color:#FF6B5E"><span style="width:8px;height:8px;border-radius:50%;background:#FF6B5E;box-shadow:0 0 8px #FF6B5E;display:inline-block"></span> Live</span></div>
-<div class="m-screen" id="mScreen">
-<div class="feed" id="feedA"></div><div class="feed" id="feedB"></div>
-<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,11,16,.15),rgba(9,11,16,.85))"></div>
-<div class="pip" id="pip"></div>
-<div id="slot" style="position:relative;z-index:2">
-<p class="mono" style="font-size:11px;color:var(--signal)" id="ftype">NOW FEEDING — TEACHING 001</p>
-<strong class="cinzel" style="color:var(--gold);font-size:22px;display:block;margin-top:6px" id="fname">Pharaoh M. Sirleaf, Laoban</strong>
-<p class="mono" style="font-size:10px;color:#777;margin-top:6px">Genesis 1:28 • Market is Weapon • Token is Blood • AI is Workforce</p>
+<h3>TEAMS 七队 <span class="cn">信使 • 守护者</span></h3>
+<div class="grid">
+<div class="badge">א ALEPH 侦察</div><div class="badge">ב BET 医疗</div><div class="badge">ג GIMEL 后勤</div><div class="badge">ד DALET 工程</div><div class="badge">ה HE 社区</div><div class="badge">ו VAV 支持</div><div class="badge">ז ZAYIN 通讯</div>
 </div>
 </div>
-<div class="ticker-wrap"><span class="ticker" id="ticker">HERMES-TOTH LIVE · TEACHING 001 · NEW EPISODE WEEKLY · KINGDOM RECORDS ON DECK · PHARAOH-CONGLOMERATE.ORG · ORANGE MONEY 0776961800 · CASHAPP $LetGodHelp · EIN 88-0836464 TAX-EXEMPT · SIGNAL STABLE · MONROVIA + SACRAMENTO · </span></div>
 </div>
-<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-<button class="btn btn-gold" onclick="tothLive?unmountToth():mountTothIframe()" id="tothToggleBtn">CONNECT TOTH LIVE</button><button class="btn btn-gold" onclick="window.open('https://hermes-toth-agent.pages.dev','_blank')" style="background:transparent;color:var(--gold)">OPEN IN NEW TAB</button>
-<button class="btn btn-outline" onclick="togglePip()">TOGGLE PIP</button>
-<button class="btn btn-outline" onclick="nextFeed()">NEXT FEED</button>
-</div>
-</section>
-
-<section id="volunteer">
-<p class="mono gold">VII. VOLUNTEER — H.A.L.E.L + PLP</p>
-<h2 class="cinzel">Join the Kham-Dom Workforce</h2>
-<p class="mono" style="font-size:12px;color:#888;margin-top:8px">volunteer/index missions teams orders consulates gates corps elements festivals rankings lore maps badges hours leaderboard — Cloudflare D1 + R2 + Workers Phase II</p>
-<div style="margin-top:18px" class="grid4">
-<div class="card"><h3>SEEKER</h3><p style="font-size:12px;color:#999">Entry. Learn the Way.</p></div>
-<div class="card"><h3>STEWARD</h3><p style="font-size:12px;color:#999">Care land waters communities.</p></div>
-<div class="card"><h3>BUILDER</h3><p style="font-size:12px;color:#999">Build BGIM, build markets.</p></div>
-<div class="card"><h3>GUARDIAN</h3><p style="font-size:12px;color:#999">Protect what cannot speak.</p></div>
-</div>
-</section>
-
-<section id="contact">
-<p class="mono gold">VIII. CONTACT — DIRECT LINE</p>
-<div class="grid4">
-<div class="card"><h3>EMAILS</h3><p style="font-size:12px;color:#bbb">pharangels@gmail.com<br>pharaoh.conglomerate.office@gmail.com<br>pharaohangels@tutanota.com<br>m.sirleaf@pharaoh-conglomerate.org</p></div>
-<div class="card"><h3>PHONES</h3><p style="font-size:12px;color:#bbb">+1 (757)805-7262<br>+1 (302)753-7770<br>(771)223-8021 Liberia<br>Orange Money 0776961800</p></div>
-<div class="card"><h3>ADDRESS</h3><p style="font-size:12px;color:#bbb">160 Bankside Way<br>Sacramento, CA 95835<br>Monrovia, Liberia Field Office</p></div>
-<div class="card"><h3>TREASURY</h3><p style="font-size:12px;color:#bbb">EIN 88-0836464 TAX-EXEMPT<br>HRAR 88-0710776 Proxy<br>CashApp $LetGodHelp<br>Law 48 Firewall Active</p></div>
-</div>
-</section>
-
-<div class="footer">
-<div>© 2026 PHARAOH CONGLOMERATE ORG<br>Built in Termux. Ruled by 21stCenturyPharaoh.<br>Commonwealth of Israel Church<br>Genesis 1:28 Dominion Economics</div>
-<div>MONROVIA, LIBERIA • SACRAMENTO, CA<br>Orange Money 0776961800 • CashApp $LetGodHelp<br>m.sirleaf@pharaoh-conglomerate.org • (771)223-8021</div>
-<div>TAX-EXEMPT EIN 88-0836464<br>HRAR INC 88-0710776 • LAW48 • Rule 241<br>Zero commingling — 2 Entities 1 Brain</div>
+<p class="cn">誓言: 慈悲 • 服务 • 保护 • 团结 | OATH: COMPASSION • SERVICE • PROTECTION • UNITY</p>
 </div>
 
-<div class="toast" id="toast">COPIED</div>
+<div class="card"><h2>HALLEL GALLERY • 视频画廊 VIDEOS <span class="cn">人道见证</span></h2>
+<div class="grid">
+<div class="vid"><iframe width="100%" height="200" src="https://www.youtube.com/embed/dhLboOnPljo" frameborder="0" allowfullscreen></iframe><p>dhLboOnPljo • 慈悲</p></div>
+<div class="vid"><iframe width="100%" height="200" src="https://www.youtube.com/embed/SGPJWd2q2RM" frameborder="0" allowfullscreen></iframe><p>SGPJWd2q2RM • 守护</p></div>
+<div class="vid"><iframe width="100%" height="200" src="https://www.youtube.com/embed/mHBJN0QA8Fo" frameborder="0" allowfullscreen></iframe><p>mHBJN0QA8Fo • 希望</p></div>
+<div class="vid"><iframe width="100%" height="200" src="https://www.youtube.com/embed/yKufPwpT4E4" frameborder="0" allowfullscreen></iframe><p>yKufPwpT4E4 • 光明</p></div>
+</div>
+</div>
 
+<div class="card"><h2>LARP UNIVERSE 8 PAGES • 八页宇宙 <span class="cn">自主合成资产</span></h2>
+<div class="grid">
+<div class="badge">missions.html 使命 • 12 Steps</div>
+<div class="badge">teams.html 团队 • Field Chapters</div>
+<div class="badge">orders.html 命令 • 12 Orders</div>
+<div class="badge">consulates.html 领事馆 • Command</div>
+<div class="badge">gates.html 门户 • Gates 中文: 门户</div>
+<div class="badge">corps.html 军团 • Corps 天使军团</div>
+<div class="badge">elements.html 元素 • Elements 风火水土</div>
+<div class="badge">lore.html 传说 • Lore 信使 Hermes 图特 Toth</div>
+</div>
+</div>
+
+<div class="card"><p>API Bridge: <span id="api-status">Checking...</span></p>
+<p>Frontend: hermes-toth-agent.pages.dev | Backend: angels-hosts-api3 + pharaoh-auto-delivery (API ONLY - IRS SAFE)</p>
+<p class="cn">人道天使 • 亚洲之门 • V27.5 GOLDEN</p></div>
 <script>
-const toggle=document.getElementById('toggle');
-const links=document.getElementById('links');
-toggle.addEventListener('click',()=>links.classList.toggle('open'));
-
-function go(id){
-  const el=document.getElementById(id);
-  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-  links.classList.remove('open');
-  document.querySelectorAll('.links button').forEach(b=>b.classList.toggle('active', b.dataset.target===id));
-}
-
-function copyTxt(t){
-  navigator.clipboard.writeText(t).then(()=>showToast('COPIED: '+t));
-}
-
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;
-  t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2200);
-}
-
-// TOTH BROADCAST - LIVE HOOK + FALLBACK
-const TOTH_URL='https://hermes-toth-agent.pages.dev';
-const feeds=[
-  {type:'TEACHING 001 — Genesis 1:28',name:'Pharaoh M. Sirleaf, Laoban',img:'https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=1200&q=80',pip:'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=400&q=80',live:false},
-  {type:'BGIM FIELD TEST — Monrovia',name:'BGIM Prototype v1',img:'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80',pip:'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&q=80',live:false},
-  {type:'H.A.L.E.L NODE — Consulate Aleph',name:'High Priestess Mosetta Moore',img:'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1200&q=80',pip:'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80',live:false},
-  {type:'VA TO FREEPORT PIPELINE',name:'Logistics • Dulles to Freeport',img:'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80',pip:'https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&q=80',live:false}
-];
-let fi=0, fa=true, tothLive=false;
-const feedA=document.getElementById('feedA'), feedB=document.getElementById('feedB'), pipEl=document.getElementById('pip');
-const ftype=document.getElementById('ftype'), fname=document.getElementById('fname');
-const mScreen=document.getElementById('mScreen');
-let iframe=null;
-
-function renderFeed(i){
-  if(tothLive && iframe){ return; } // if live iframe is up, don't override
-  const f=feeds[i%feeds.length];
-  const active=fa?feedA:feedB, inactive=fa?feedB:feedA;
-  active.style.backgroundImage=`url('${f.img}')`;
-  active.style.opacity='1'; inactive.style.opacity='0';
-  ftype.textContent='NOW FEEDING — '+f.type;
-  fname.textContent=f.name;
-  pipEl.style.backgroundImage=`url('${f.pip}')`;
-  fa=!fa;
-}
-function nextFeed(){ if(tothLive) return; fi=(fi+1)%feeds.length; renderFeed(fi); }
-function togglePip(){ pipEl.classList.toggle('on'); }
-
-async function checkTothLive(){
-  try{
-    const controller=new AbortController(); setTimeout(()=>controller.abort(),3500);
-    const res=await fetch(TOTH_URL,{method:'HEAD',mode:'no-cors',signal:controller.signal});
-    // no-cors always opaque, so we try to create iframe and detect load
-    mountTothIframe();
-  }catch(e){
-    console.log('TOTH offline, keeping monitor',e);
-    ftype.textContent='NOW FEEDING — LOCAL MONITOR (TOTH OFFLINE)';
-  }
-}
-function mountTothIframe(){
-  if(iframe) return;
-  iframe=document.createElement('iframe');
-  iframe.src=TOTH_URL;
-  iframe.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1;background:#090B10';
-  iframe.allow='autoplay; fullscreen; microphone; camera';
-  iframe.onload=()=>{
-    tothLive=true;
-    feedA.style.opacity='0'; feedB.style.opacity='0';
-    ftype.textContent='LIVE — HERMES-TOTH-AGENT.PAGES.DEV';
-    fname.textContent='Connected — Automates Hermes Agent';
-    document.querySelector('.m-bar span:last-child').innerHTML='<span style="width:8px;height:8px;border-radius:50%;background:#4CAF50;box-shadow:0 0 8px #4CAF50;display:inline-block"></span> Live • Iframe';
-    showToast('TOTH LIVE CONNECTED');
-  };
-  iframe.onerror=()=>{
-    tothLive=false;
-    if(iframe) iframe.remove(); iframe=null;
-  };
-  mScreen.prepend(iframe);
-  // Safety timeout: if not loaded in 6s, keep local
-  setTimeout(()=>{ if(!tothLive){ /* keep fallback */ } },6000);
-}
-
-function unmountToth(){ if(iframe){iframe.remove();iframe=null;} tothLive=false; renderFeed(fi); showToast('TOTH LOCAL MONITOR'); }
-
-renderFeed(0); pipEl.classList.add('on');
-setInterval(()=>{ if(!tothLive) nextFeed(); },7000);
-checkTothLive();
-
-// Re-check every 30s
-setInterval(checkTothLive,30000);
+fetch('https://angels-hosts-api3.pharangels.workers.dev/v27.5/health').then(r=>r.json()).then(d=>document.getElementById('api-status').innerText='HALLEL API '+d.version+' '+d.status+' • 桥接活着').catch(()=>document.getElementById('api-status').innerText='API offline - check Workers');
 </script>
-</body>
-</html>
-
-<!-- UNSEALING LIVE BANNER - Aug 9 2026 -->
-<section style="padding:40px;background:#0a0a0a;color:#fff;text-align:center;border-top:2px solid #FFD700;">
-<h2 style="color:#FFD700;">UNSEALING OF THE PROPHETS - LIVE ON AMAZON</h2>
-<p>ASIN B0B3H8886Z | 1454 Pages | Red-Letter Edition</p>
-<a href="https://www.amazon.com/dp/B0B3H8886Z" style="background:#FFD700;color:#000;padding:12px 24px;text-decoration:none;font-weight:bold;">Buy $9.99 on Amazon</a>
-</section>
+</body></html>
