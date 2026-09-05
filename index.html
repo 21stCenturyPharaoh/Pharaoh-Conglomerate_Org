@@ -68,5 +68,21 @@ async function load(){
 }
 load();
 </script>
+
+<!-- PHARAOH VOLUNTEER EXCHANGE BASE44 WIRED V27.5 -->
+<section id="volunteer-exchange" style="font-family:system-ui;background:#070b1e;color:#e6e8ff;padding:28px;border-radius:16px;border:1px solid #D4AF37;margin:24px 0">
+<h2 style="color:#D4AF37;text-align:center">🌟 PHARAOH VOLUNTEER EXCHANGE — AI-POWERED LEGACY</h2>
+<p style="text-align:center;opacity:.9">Where ancient wisdom meets modern AI service. Built with Base44 AI & Soloist AI, our platform connects Eco-stewards, volunteers, and changemakers through intelligent flow-based missions.</p>
+<p style="text-align:center"><a href="https://pharaoh-serve-flow.base44.app" target="_blank" style="background:#D4AF37;color:#000;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:800;display:inline-block">👉 Join the Flow</a></p>
+<div id="base44-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:18px"></div>
+<p style="font-size:11px;text-align:center;opacity:.7;margin-top:16px">IRS FIREWALL: pharaoh-conglomerate.org = 501(c)(3) DONATION ONLY EIN 88-0836464. Commerce = registry.pharaoh-conglomerate.org C Corp EIN 88-0710776 | V27.5 亚洲之门 | HALLEL-API-ONLY</p>
+<script>
+fetch('https://angels-hosts-api3.pharangels.workers.dev/v27.5/engines.json').then(r=>r.json()).then(d=>{
+  const g=document.getElementById('base44-grid');
+  if(!g)return;
+  g.innerHTML=Object.entries(d.engines).map(([k,v])=>`<a href="${v}" target="_blank" style="background:#0f1630;border:1px solid #1e2a5a;padding:12px;border-radius:10px;text-decoration:none;color:#e6e8ff;font-size:10px;text-align:center;display:block"><b style="color:#D4AF37">${k}</b><br>${v.replace('https://','')}</a>`).join('');
+});
+</script>
+</section>
 </body>
 </html>
