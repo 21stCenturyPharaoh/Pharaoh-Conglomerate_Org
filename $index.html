@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- IRS FIREWALL: 501(c)(3) DONATIONS ONLY - NO COMMERCE - EIN 88-0836464 | C Corp Commerce = registry.pharaoh-conglomerate.org ONLY -->
+<meta name="irs-firewall" content="pharaoh-conglomerate.org is 501c3 donation-only; all commerce, Orange Money, affiliates via HumanRightsAngels-The-Registry C Corp EIN 88-0710776 at registry.pharaoh-conglomerate.org and pharaoh-auto-delivery Worker">
+<script>/* FIREWALL GUARD */ if(location.hostname.includes('pharaoh-conglomerate.org')){window.PHARAOH_MODE='DONATION_ONLY';const b=['pharaoh-auto-delivery','register-business','register-affiliate','track-click','verify-orange','affiliates'];const _f=window.fetch;window.fetch=function(u,...r){if(b.some(x=>String(u).includes(x))){console.warn('IRS FIREWALL BLOCKED:',u);return Promise.resolve(new Response(JSON.stringify({error:'IRS_FIREWALL: Commerce blocked on 501c3 domain. Use registry.pharaoh-conglomerate.org'}),{status:403}));}return _f(u,...r);};}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pharaoh Conglomerate Org | V27.5 亚洲之门</title>
+<meta name="description" content="V27.5 亚洲之门 - HALLEL-API-ONLY - Auto-gallery from angels-hosts-api3">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#D4AF37;--black:#0A0A0A;--line:rgba(212,175,55,.22);--dim:#B9AF98}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0A0A0A;color:#fff;font-family:Inter,system-ui,sans-serif;line-height:1.6}
+.mono{font-family:'IBM Plex Mono',monospace}.gold{color:var(--gold)}.cinzel{font-family:'Cinzel',serif}
+.topbar{background:var(--gold);color:#000;text-align:center;padding:8px 10px;font-size:10px;font-weight:900;letter-spacing:.18em}
+.hero{text-align:center;padding:70px 20px 40px;max-width:1320px;margin:auto}
+h1{font-family:'Cinzel',serif;font-size:clamp(32px,6vw,62px);line-height:.9;font-weight:900}
+.btn{display:inline-block;padding:12px 22px;border:1px solid var(--gold);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;text-decoration:none;margin:6px}
+.btn-gold{background:var(--gold);color:#000}.btn-ghost{color:var(--gold);background:transparent}
+section{padding:50px 20px;border-top:1px solid var(--line);max-width:1320px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:20px}
+.card{border:1px solid var(--line);background:#141414;overflow:hidden;border-radius:12px}
+.card .meta{padding:12px}.card iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+.status{font-size:11px;color:var(--dim);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="topbar">V27.5 亚洲之门 | 慈悲令 守护令 希望令 光明令 | HALLEL-API-ONLY | AUTO-GALLERY</div>
+<div class="hero">
+<h1>PHARAOH CONGLOMERATE<span class="gold"> 亚洲之门</span></h1>
+<p class="mono" style="margin:14px 0;color:var(--dim)">EIN 88-0836464 | Orange Money 0776961800 | H.A.L.L.EL double L</p>
+<div>
+<a class="btn btn-gold" href="https://angels-hosts-api3.pharangels.workers.dev/v27.5/health" target="_blank">V27.5 HEALTH</a>
+<a class="btn btn-ghost" href="https://angels-hosts-api3.pharangels.workers.dev/v27.5/videos.json" target="_blank">VIDEOS.JSON</a>
+<a class="btn btn-ghost" href="https://hermes-toth-agent.pages.dev/?v=27.5" target="_blank">HERMES TOTH</a>
+</div>
+<div class="status mono" id="live">Loading empire...</div>
+</div>
+<section>
+<h2 class="cinzel gold">TOTH WALL — LIVE BROADCAST (AUTO)</h2>
+<p class="mono" style="font-size:12px;color:var(--dim)">Single source: angels-hosts-api3 → All frontends auto-update</p>
+<div id="video-grid" class="grid"><p class="mono">Loading 5-video golden...</p></div>
+</section>
+<script>
+const VIDEO_API = "https://angels-hosts-api3.pharangels.workers.dev/v27.5/videos.json";
+const HEALTH_API = "https://angels-hosts-api3.pharangels.workers.dev/v27.5/health";
+async function load(){
+ try{
+  const h = await fetch(HEALTH_API).then(r=>r.json());
+  document.getElementById('live').innerHTML = `LIVE: ${h.status.toUpperCase()} ${h.version} | ${h.engines} engines · ${h.videos} videos · ${h.whatsapp} WhatsApp | ${new Date().toLocaleTimeString()}`;
+ }catch{}
+ try{
+  const r = await fetch(VIDEO_API);
+  const data = await r.json();
+  const videos = data.videos || data.placements || [];
+  document.getElementById('video-grid').innerHTML = videos.map(v=>`
+    <div class="card">
+      <iframe src="https://www.youtube.com/embed/${v.id}" allowfullscreen loading="lazy"></iframe>
+      <div class="meta">
+        <b class="gold mono" style="font-size:11px">${v.slot||'VIDEO'}</b><br>
+        <span style="font-size:12px">${v.title}</span><br>
+        <a class="mono" style="font-size:10px;color:#B9AF98" href="${v.youtube||'https://youtube.com/watch?v='+v.id}" target="_blank">${v.id}</a>
+      </div>
+    </div>
+  `).join('');
+ }catch(e){ document.getElementById('video-grid').innerHTML = `<p class="mono">Worker offline — ${e}</p>`; }
+}
+load();
+</script>
+
+<!-- PHARAOH VOLUNTEER EXCHANGE BASE44 WIRED V27.5 -->
+<section id="volunteer-exchange" style="font-family:system-ui;background:#070b1e;color:#e6e8ff;padding:28px;border-radius:16px;border:1px solid #D4AF37;margin:24px 0">
+<h2 style="color:#D4AF37;text-align:center">🌟 PHARAOH VOLUNTEER EXCHANGE — AI-POWERED LEGACY</h2>
+<p style="text-align:center;opacity:.9">Where ancient wisdom meets modern AI service. Built with Base44 AI & Soloist AI, our platform connects Eco-stewards, volunteers, and changemakers through intelligent flow-based missions.</p>
+<p style="text-align:center"><a href="https://pharaoh-serve-flow.base44.app" target="_blank" style="background:#D4AF37;color:#000;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:800;display:inline-block">👉 Join the Flow</a></p>
+<div id="base44-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:18px"></div>
+<p style="font-size:11px;text-align:center;opacity:.7;margin-top:16px">IRS FIREWALL: pharaoh-conglomerate.org = 501(c)(3) DONATION ONLY EIN 88-0836464. Commerce = registry.pharaoh-conglomerate.org C Corp EIN 88-0710776 | V27.5 亚洲之门 | HALLEL-API-ONLY</p>
+<script>
+fetch('https://angels-hosts-api3.pharangels.workers.dev/v27.5/engines.json').then(r=>r.json()).then(d=>{
+  const g=document.getElementById('base44-grid');
+  if(!g)return;
+  g.innerHTML=Object.entries(d.engines).map(([k,v])=>`<a href="${v}" target="_blank" style="background:#0f1630;border:1px solid #1e2a5a;padding:12px;border-radius:10px;text-decoration:none;color:#e6e8ff;font-size:10px;text-align:center;display:block"><b style="color:#D4AF37">${k}</b><br>${v.replace('https://','')}</a>`).join('');
+});
+</script>
+</section>
+</body>
+</html>
