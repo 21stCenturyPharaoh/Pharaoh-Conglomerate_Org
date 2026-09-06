@@ -48,7 +48,7 @@ const HEALTH_API = "https://angels-hosts-api3.pharangels.workers.dev/v27.5/healt
 async function load(){
  try{
   const h = await fetch(HEALTH_API).then(r=>r.json());
-  document.getElementById('live').innerHTML = `LIVE: ${h.worker} ${h.version} ${h.asia_gate} | ${h.videos} videos | ${new Date().toLocaleTimeString()}`;
+  document.getElementById('live').innerHTML = `LIVE: ${h.status.toUpperCase()} ${h.version} | ${h.engines} engines · ${h.videos} videos · ${h.whatsapp} WhatsApp | ${new Date().toLocaleTimeString()}`;
  }catch{}
  try{
   const r = await fetch(VIDEO_API);
